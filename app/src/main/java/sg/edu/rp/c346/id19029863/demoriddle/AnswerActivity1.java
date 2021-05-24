@@ -15,8 +15,13 @@ public class AnswerActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_answer1);
         answer = findViewById(R.id.Answer);
         Intent intentReceived = getIntent();
-        String questionsSelected = intentReceived.getStringExtra("Question1");
-        answer.setText(questionsSelected + " answer is: Queue");
 
+        String questionsSelected = intentReceived.getStringExtra("Question");
+        if (questionsSelected.equalsIgnoreCase("Q1")){
+            answer.setText(questionsSelected + " answer is: Queue");
+        }else if(questionsSelected.equalsIgnoreCase("Q2")){
+            answer.setText(questionsSelected + " answer is: Gone");
+
+        }
     }
 }
